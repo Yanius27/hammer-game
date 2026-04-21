@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --game-width: 360px;
+  --game-height: 640px;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c1c0bd 0%, #303030 100%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+}
+
+#root {
+  width: var(--game-width);
+  height: var(--game-height);
+
+  outline: #303030 solid 2px;
+  overflow: hidden;
+}

@@ -1,0 +1,12 @@
+.hit-button {
+ width: 33%;
+
+ position: absolute;
+ bottom: 32%;
+ left: 50%;
+ transform: translateX(-50%);
+}
+
+.hit-button img {
+  width: 100%;
+}
