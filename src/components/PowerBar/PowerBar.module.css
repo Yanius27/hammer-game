@@ -1,0 +1,7 @@
+.power-bar {
+  width: 48px;
+  height: 147px;
+
+  background: url("/src/assets/images/scale.png");
+  background-size: cover;
+}

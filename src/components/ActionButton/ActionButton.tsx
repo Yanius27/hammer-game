@@ -1,13 +1,15 @@
-import { useGameStore } from "@/store/gameStore";
 import styles from "./ActionButton.module.css";
-import { GameStatus } from "@/types/game";
 
-export default function ActionButton() {
-  const { status } = useGameStore();
+type TActionButtonProps = {
+  onClick: () => void,
+  className: string,
+  label: string
+}
 
+export default function ActionButton({ onClick, className, label }: TActionButtonProps) {
   return (
-    <button className={styles["action-button"]}>
-      {status === GameStatus.IDLE && 'УДАР!'}
+    <button onClick={onClick} className={`${styles["action-button"]} ${styles[className]}`}>
+      {label}
     </button>
   )
 }

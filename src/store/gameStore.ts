@@ -1,9 +1,10 @@
-import { GameStatus, type HitResult } from "@/types/game";
+import { GameStatus, HitPhase, type HitResult } from "@/types/game";
 import { getResult } from "@/utils/getResult";
 import { create } from "zustand";
 
 type GameStore = {
   status: GameStatus,
+  hitPhase: HitPhase,
   power: number,
   result: HitResult | null,
 
@@ -15,6 +16,7 @@ type GameStore = {
 
 export const useGameStore = create<GameStore>((set, get) => ({
   status: GameStatus.IDLE,
+  hitPhase: HitPhase.IDLE,
   power: 0,
   result: null,
 
@@ -27,13 +29,22 @@ export const useGameStore = create<GameStore>((set, get) => ({
   }),
 
   hit: () => {
-    const power = get().power;
-    const result = getResult(power);
+    set({ hitPhase: HitPhase.WINDUP });
 
-    set({
-      status: GameStatus.RESULT,
-      result
-    });
+    setTimeout(() => {
+      set({ hitPhase: HitPhase.HIT });
+    }, 500);
+
+    setTimeout(() => {
+      const power = get().power;
+      const result = getResult(power);
+
+      set({
+        status: GameStatus.RESULT,
+        hitPhase: HitPhase.RESOLVE,
+        result
+      });
+    }, 200);
   },
 
   reset: () => {

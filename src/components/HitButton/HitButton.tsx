@@ -1,12 +1,15 @@
-import hitButtonInactive from "@/assets/images/button.png";
-// import hitButtonActive from "@/assets/images/button_active.png";
+import type { HitPhase } from "@/types/game";
 
 import styles from "./HitButton.module.css";
 
-export default function HitButton() {
+type THitButton = {
+  phase: HitPhase,
+}
+
+export default function HitButton({ phase }: THitButton) {
   return (
-    <div className={styles["hit-button"]}>
-      <img src={hitButtonInactive} alt="Hit button" />
+    <div className={`${styles["hit-button"]} ${styles[phase]}`}>
+
     </div>
   )
 }

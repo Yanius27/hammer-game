@@ -5,10 +5,11 @@ import { GameStatus } from "@/types/game"
 
 type Params = {
   status: GameStatus,
+  power: number,
   setPower: (value: number) => void
 }
 
-export const usePowerAnimation = ({ status, setPower }: Params) => {
+export const usePowerAnimation = ({ status, power, setPower }: Params) => {
   const directionRef = useRef(1);
 
   useEffect(() => {
@@ -17,21 +18,19 @@ export const usePowerAnimation = ({ status, setPower }: Params) => {
     }
 
     const interval = setInterval(() => {
-      setPower((prev) => {
-        const next = prev + directionRef.current * 2;
+      const next = power + directionRef.current * 2;
 
-        if (next >= MAX_POWER) {
-          directionRef.current = -1;
-        }
+      if (next >= MAX_POWER) {
+        directionRef.current = -1;
+      }
 
-        if (next <= MIN_POWER) {
-          directionRef.current = 1;
-        }
+      if (next <= MIN_POWER) {
+        directionRef.current = 1;
+      }
 
-        return Math.max(0, Math.min(100, next));
-      })
+      setPower(next);
     }, INTERVAL);
 
     return () => clearInterval(interval);
-  }, [status, setPower]);
+  }, [status, power, setPower]);
 };

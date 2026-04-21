@@ -9,17 +9,29 @@
   --game-height: 640px;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('/src/assets/fonts/Roboto-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 html, body {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #c1c0bd 0%, #303030 100%);
+  background: linear-gradient(135deg, #d1d0cb 0%, #282828 100%);
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Arial', sans-serif;
+
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 #root {

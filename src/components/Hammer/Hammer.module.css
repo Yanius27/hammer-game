@@ -1,0 +1,35 @@
+.Hammer {
+  width: 140px;
+
+  position: absolute;
+  transform: translateY(-5%);
+  left: 35%;
+  z-index: 2;
+}
+
+.Hammer img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.HIT {
+  animation: hammerHit 2s ease-in-out forwards;
+}
+
+@keyframes hammerHit {
+  0% {
+    transform: translate(0, -5%) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(30px, -50px) rotate(60deg);
+  }
+
+  50% {
+    transform: translate(-35px, -30px) rotate(-60deg);
+  }
+
+  100% {
+    transform: translate(-35px, -30px) rotate(-50deg);
+  }
+}

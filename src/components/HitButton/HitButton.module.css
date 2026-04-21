@@ -1,12 +1,33 @@
 .hit-button {
- width: 33%;
+  width: 124px;
+  height: 60px;
 
- position: absolute;
- bottom: 32%;
- left: 50%;
- transform: translateX(-50%);
+  background: url("/src/assets/images/button.png");
+  background-size: cover;
 }
 
-.hit-button img {
-  width: 100%;
+.HIT {
+  animation: buttonPress 250ms ease-in-out forwards 0.8s;
+}
+
+@keyframes buttonPress {
+  0% {
+    transform: rotate(0deg);
+    background: url("/src/assets/images/button.png");
+     background-size: cover;
+  }
+
+  25% {
+    transform: rotate(2deg);
+  }
+
+  50% {
+    transform: rotate(-1deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+    background: url("/src/assets/images/button_active.png");
+     background-size: cover;
+  }
 }

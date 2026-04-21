@@ -1,0 +1,8 @@
+.roboto-assistant {
+  width: 80px;
+}
+
+.roboto-assistant img {
+  width: 100%;
+  object-fit: cover;
+}
