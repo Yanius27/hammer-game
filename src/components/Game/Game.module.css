@@ -2,12 +2,14 @@
   width: 360px;
   height: 640px;
   margin: 0 auto;
-  padding: 35px 10px 64px 20px;
+  padding: 35px 20px 64px 20px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  position: relative;
 
   background: url('/src/assets/images/bg_top.png');
   background-size: cover;
@@ -27,7 +29,7 @@
   align-items: center;
   position: absolute;
 
-  bottom: 38%;
+  bottom: 33%;
 }
 
 .left {
@@ -35,6 +37,8 @@
 }
 
 .center {
+  width: 172px;
+  
   display: flex;
   flex-direction: column;
   align-items: center;

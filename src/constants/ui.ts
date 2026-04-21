@@ -3,7 +3,7 @@ export const UI_TEXT = {
   hitLabel: 'Удар!',
 
   startMessage: 'Привет!\nПроверим твою силу!',
-  instructionsMessage: 'Жми на кнопку в нужный момент!',
+  instructionsMessage: 'Жми на кнопку\nв нужный момент!',
 
   prize: "Рубин",
 
