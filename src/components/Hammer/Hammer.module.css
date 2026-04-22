@@ -2,8 +2,8 @@
   width: 140px;
 
   position: absolute;
-  transform: translateY(-5%);
-  left: 35%;
+  left: 45%;
+  bottom: -65%;
   z-index: 2;
 }
 
@@ -12,24 +12,46 @@
   object-fit: cover;
 }
 
-.HIT {
-  animation: hammerHit 2s ease-in-out forwards;
+.PLAYING {
+  animation: hammerReady 800ms ease-in-out forwards;
 }
 
-@keyframes hammerHit {
+.WINDUP {
+  animation: hammerWindup 1.5s ease-in forwards;
+}
+
+.RESOLVE {
+  transform: translate(-40px, -18px) rotate(-50deg);
+}
+
+@keyframes hammerReady {
   0% {
-    transform: translate(0, -5%) rotate(0deg);
-  }
-
-  25% {
-    transform: translate(30px, -50px) rotate(60deg);
-  }
-
-  50% {
-    transform: translate(-30px, -25px) rotate(-60deg);
+    transform: translate(0, 0) rotate(0);
   }
 
   100% {
-    transform: translate(-30px, -25px) rotate(-50deg);
+    transform: translate(10px, -40px) rotate(38deg);
+  }
+}
+
+@keyframes hammerWindup {
+  0% {
+    transform: translate(10px, -40px) rotate(38deg);
+  }
+
+  25% {
+    transform: translate(0, -50px) rotate(45deg);
+  }
+
+  50% {
+    transform: translate(-20px, -45px) rotate(60deg);
+  }
+
+  75% {
+    transform: translate(-40px, -17px) rotate(-60deg);
+  }
+
+  100% {
+    transform: translate(-40px, -18px) rotate(-50deg);
   }
 }

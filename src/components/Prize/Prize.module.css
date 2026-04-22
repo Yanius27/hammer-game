@@ -1,0 +1,45 @@
+
+.wrapper {
+  width: 100%;
+
+  padding: 15px 0 5px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.cont {
+  width: 73px;
+  height: 47px;
+
+  border-radius: 4px;
+
+  position: relative;
+}
+
+.ordinary {
+  background: linear-gradient(to top, #080B3A, #B676CB);
+}
+
+.perfect {
+  background: linear-gradient(to top, #FF0101, #FF9494);
+}
+
+.cont::after {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  z-index: 3;
+
+  content: '';
+  display: block;
+  
+  background-image: url("/src/assets/images/prize.svg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}

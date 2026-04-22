@@ -14,8 +14,8 @@ export const HitResult = {
 
 export const HitPhase = {
   IDLE: 'IDLE',
+  PLAYING: 'PLAYING',
   WINDUP: 'WINDUP',
-  HIT: 'HIT',
   RESOLVE: 'RESOLVE',
 }
 

@@ -3,7 +3,7 @@ import ActionButton from "../ActionButton/ActionButton";
 import HitButton from "../HitButton/HitButton";
 import ResultScale from "../ResultScale/ResultScale";
 import GameLayout from "./GameLayout";
-import { GameStatus } from "@/types/game";
+import { GameStatus, HitPhase } from "@/types/game";
 import { useGameView } from "@/hooks/useGameView";
 import { usePowerAnimation } from "@/hooks/usePowerAnimation";
 import MessageBlock from "../MessageBlock/MessageBlock";
@@ -14,12 +14,13 @@ import PowerBar from "../PowerBar/PowerBar";
 import RobotoAssistant from "../RobotoAssistant/RobotoAssistant";
 
 export default function Game() {
-  const { status, power, hitPhase, result, setPower, startGame, hit } = useGameStore();
-  const { buttonText, message } = useGameView(status, result);
+  const { status, power, hitPhase, result, setPower, startGame, reset, hit } = useGameStore();
+  const { buttonText, message } = useGameView(hitPhase, result);
 
   const isPlaying = status === GameStatus.PLAYING;
+  const isWindUp = hitPhase === HitPhase.WINDUP;
 
-  usePowerAnimation({ status, power, setPower });
+  usePowerAnimation({ status, hitPhase, setPower });
 
   const handleClick = () => {
     switch (status) {
@@ -30,6 +31,7 @@ export default function Game() {
         hit();
         break;
       case GameStatus.RESULT:
+        reset();
         startGame();
         break;
     }
@@ -49,16 +51,18 @@ export default function Game() {
 
       <div className={styles.bottom}>
         <div className={styles.left}>
-          <PowerBar />
+          <PowerBar power={power} />
         </div>
 
         <div className={styles.center}>
           <MessageBlock text={message} />
-          <ActionButton 
-            onClick={handleClick} 
-            className={isPlaying ? "hit" : "default"}
-            label={buttonText}
-          />
+          {!isWindUp && (
+            <ActionButton 
+              onClick={handleClick} 
+              className={isPlaying ? "hit" : "default"}
+              label={buttonText}
+            />
+          )}
         </div>
 
         <div className={styles.right}>

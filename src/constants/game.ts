@@ -7,4 +7,4 @@ export const HIGH_ZONE = 70;
 export const MEDIUM_ZONE = 40;
 export const LOW_ZONE = 20;
 
-export const INTERVAL = 30;
+export const INTERVAL = 40;

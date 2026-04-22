@@ -6,28 +6,59 @@
   background-size: cover;
 }
 
-.HIT {
-  animation: buttonPress 250ms ease-in-out forwards 0.8s;
+.WINDUP {
+  animation: buttonPress 1s ease-in-out forwards 0.8s;
+}
+
+.RESOLVE {
+  background: url("/src/assets/images/button_active.png");
+  background-size: cover;
+  animation: buttonShaking 700ms ease-in-out forwards;
 }
 
 @keyframes buttonPress {
   0% {
     transform: rotate(0deg);
     background: url("/src/assets/images/button.png");
-     background-size: cover;
+    background-size: cover;
   }
 
   25% {
-    transform: rotate(2deg);
+    transform: rotate(0deg);
+    background: url("/src/assets/images/button.png");
+    background-size: cover;
   }
 
   50% {
+    transform: rotate(4deg);
+    background: url("/src/assets/images/button_active.png");
+    background-size: cover;
+  }
+
+  75% {
+    transform: rotate(-2deg);
+    background: url("/src/assets/images/button_active.png");
+    background-size: cover;
+  }
+
+
+  100% {
+    transform: rotate(2deg);
+    background: url("/src/assets/images/button_active.png");
+    background-size: cover;
+  }
+}
+
+@keyframes buttonShaking {
+  0% {
     transform: rotate(-1deg);
+  }
+
+  50% {
+    transform: rotate(1deg);
   }
 
   100% {
     transform: rotate(0deg);
-    background: url("/src/assets/images/button_active.png");
-     background-size: cover;
   }
 }

@@ -1,36 +1,38 @@
 import { useEffect, useRef } from "react";
 
 import { INTERVAL, MAX_POWER, MIN_POWER } from "@/constants/game";
-import { GameStatus } from "@/types/game"
+import { GameStatus, HitPhase } from "@/types/game"
 
 type Params = {
   status: GameStatus,
-  power: number,
-  setPower: (value: number) => void
+  hitPhase: HitPhase,
+  setPower: (v: number | ((prev: number) => number)) => void,
 }
 
-export const usePowerAnimation = ({ status, power, setPower }: Params) => {
+export const usePowerAnimation = ({ status, hitPhase, setPower }: Params) => {
   const directionRef = useRef(1);
 
   useEffect(() => {
-    if (status !== GameStatus.PLAYING) {
+    if (status !== GameStatus.PLAYING || hitPhase === HitPhase.RESOLVE) {
       return;
     }
 
     const interval = setInterval(() => {
-      const next = power + directionRef.current * 2;
+      setPower((prev) => {
+        const next = prev + directionRef.current * 2;
 
-      if (next >= MAX_POWER) {
-        directionRef.current = -1;
-      }
+        if (next >= MAX_POWER) {
+          directionRef.current = -1;
+        }
 
-      if (next <= MIN_POWER) {
-        directionRef.current = 1;
-      }
+        if (next <= MIN_POWER) {
+          directionRef.current = 1;
+        }
 
-      setPower(next);
+        return next;
+      });
     }, INTERVAL);
 
     return () => clearInterval(interval);
-  }, [status, power, setPower]);
+  }, [status, hitPhase, setPower]);
 };

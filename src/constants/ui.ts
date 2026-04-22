@@ -1,9 +1,9 @@
 export const UI_TEXT = {
   startLabel: 'Новая игра',
-  hitLabel: 'Удар!',
+  playingLabel: 'Удар!',
 
   startMessage: 'Привет!\nПроверим твою силу!',
-  instructionsMessage: 'Жми на кнопку\nв нужный момент!',
+  playingMessage: 'Жми на кнопку\nв нужный момент!',
 
   prize: "Рубин",
 
