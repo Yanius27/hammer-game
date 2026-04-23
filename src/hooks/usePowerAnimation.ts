@@ -12,12 +12,12 @@ type Params = {
 /**
  * Хук для анимации шкалы силы удара (PowerBar)
  * Реализует зацикленное движение индикатора вверх-вниз от MIN_POWER до MAX_POWER
- * 
+ *
  * @param status - Общий статус игры (анимация происходит только при статусе PLAYING)
  * @param hitPhase - текущая фаза удара (анимация останавливается в фазе RESOLVE)
  * @param setPower - Функция для обновления текущего положения индикатора в store
- * 
- * @example 
+ *
+ * @example
  * const { buttonText, message } = usePowerAnimation(GameStatus.PLAYING, HitPhase.PLAYING, setPower);
  */
 

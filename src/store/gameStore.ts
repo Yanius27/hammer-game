@@ -16,7 +16,7 @@ type GameStore = {
 
 /**
  * Zustand хранилище состояния всего приложения (status, hitPhase, power, result, setPower, startGame, hit, reset)
- * 
+ *
  * @example
  * const { status, hitPhase, hit } = useGameStore();
  */
