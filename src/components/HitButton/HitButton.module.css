@@ -2,7 +2,7 @@
   width: 124px;
   height: 60px;
 
-  background: url("/src/assets/images/button.png");
+  background: url('/src/assets/images/button.png');
   background-size: cover;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .RESOLVE {
-  background: url("/src/assets/images/button_active.png");
+  background: url('/src/assets/images/button_active.png');
   background-size: cover;
   animation: buttonShaking 700ms ease-in-out forwards;
 }
@@ -19,32 +19,31 @@
 @keyframes buttonPress {
   0% {
     transform: rotate(0deg);
-    background: url("/src/assets/images/button.png");
+    background: url('/src/assets/images/button.png');
     background-size: cover;
   }
 
   25% {
     transform: rotate(0deg);
-    background: url("/src/assets/images/button.png");
+    background: url('/src/assets/images/button.png');
     background-size: cover;
   }
 
   50% {
     transform: rotate(4deg);
-    background: url("/src/assets/images/button_active.png");
+    background: url('/src/assets/images/button_active.png');
     background-size: cover;
   }
 
   75% {
     transform: rotate(-2deg);
-    background: url("/src/assets/images/button_active.png");
+    background: url('/src/assets/images/button_active.png');
     background-size: cover;
   }
 
-
   100% {
     transform: rotate(2deg);
-    background: url("/src/assets/images/button_active.png");
+    background: url('/src/assets/images/button_active.png');
     background-size: cover;
   }
 }

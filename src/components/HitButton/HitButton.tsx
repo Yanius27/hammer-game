@@ -1,15 +1,11 @@
-import type { HitPhase } from "@/types/game";
+import type { HitPhase } from '@/types/game';
 
-import styles from "./HitButton.module.css";
+import styles from './HitButton.module.css';
 
 type THitButton = {
-  phase: HitPhase,
-}
+  phase: HitPhase;
+};
 
 export default function HitButton({ phase }: THitButton) {
-  return (
-    <div className={`${styles["hit-button"]} ${styles[phase]}`}>
-
-    </div>
-  )
+  return <div className={`${styles['hit-button']} ${styles[phase]}`}></div>;
 }

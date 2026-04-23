@@ -19,7 +19,8 @@
   font-display: swap;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(135deg, #d1d0cb 0%, #282828 100%);
@@ -43,4 +44,3 @@ body {
   outline: #303030 solid 2px;
   overflow: hidden;
 }
-

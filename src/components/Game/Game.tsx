@@ -1,17 +1,17 @@
-import { useGameStore } from "@/store/gameStore";
-import ActionButton from "../ActionButton/ActionButton";
-import HitButton from "../HitButton/HitButton";
-import ResultScale from "../ResultScale/ResultScale";
-import GameLayout from "./GameLayout";
-import { GameStatus, HitPhase } from "@/types/game";
-import { useGameView } from "@/hooks/useGameView";
-import { usePowerAnimation } from "@/hooks/usePowerAnimation";
-import MessageBlock from "../MessageBlock/MessageBlock";
-import Hammer from "../Hammer/Hammer";
+import { useGameStore } from '@/store/gameStore';
+import ActionButton from '../ActionButton/ActionButton';
+import HitButton from '../HitButton/HitButton';
+import ResultScale from '../ResultScale/ResultScale';
+import GameLayout from './GameLayout';
+import { GameStatus, HitPhase } from '@/types/game';
+import { useGameView } from '@/hooks/useGameView';
+import { usePowerAnimation } from '@/hooks/usePowerAnimation';
+import MessageBlock from '../MessageBlock/MessageBlock';
+import Hammer from '../Hammer/Hammer';
 
-import styles from "./Game.module.css";
-import PowerBar from "../PowerBar/PowerBar";
-import RobotoAssistant from "../RobotoAssistant/RobotoAssistant";
+import styles from './Game.module.css';
+import PowerBar from '../PowerBar/PowerBar';
+import RobotoAssistant from '../RobotoAssistant/RobotoAssistant';
 
 export default function Game() {
   const { status, power, hitPhase, result, setPower, startGame, reset, hit } = useGameStore();
@@ -39,7 +39,6 @@ export default function Game() {
 
   return (
     <GameLayout>
-
       <div className={styles.top}>
         <ResultScale />
       </div>
@@ -57,9 +56,9 @@ export default function Game() {
         <div className={styles.center}>
           <MessageBlock text={message} />
           {!isWindUp && (
-            <ActionButton 
-              onClick={handleClick} 
-              className={isPlaying ? "hit" : "default"}
+            <ActionButton
+              onClick={handleClick}
+              className={isPlaying ? 'hit' : 'default'}
               label={buttonText}
             />
           )}
@@ -69,7 +68,6 @@ export default function Game() {
           <RobotoAssistant result={result} />
         </div>
       </div>
-
     </GameLayout>
-  )
+  );
 }

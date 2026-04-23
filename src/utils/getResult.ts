@@ -1,5 +1,5 @@
-import { HIGH_ZONE, LOW_ZONE, MEDIUM_ZONE, PERFECT_ZONE } from "@/constants/game";
-import { HitResult } from "@/types/game";
+import { HIGH_ZONE, LOW_ZONE, MEDIUM_ZONE, PERFECT_ZONE } from '@/constants/game';
+import { HitResult } from '@/types/game';
 
 export const getResult = (power: number) => {
   if (power >= PERFECT_ZONE) return HitResult.PERFECT;

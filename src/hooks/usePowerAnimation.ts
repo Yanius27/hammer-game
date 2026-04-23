@@ -1,13 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
-import { INTERVAL, MAX_POWER, MIN_POWER } from "@/constants/game";
-import { GameStatus, HitPhase } from "@/types/game"
+import { INTERVAL, MAX_POWER, MIN_POWER } from '@/constants/game';
+import { GameStatus, HitPhase } from '@/types/game';
 
 type Params = {
-  status: GameStatus,
-  hitPhase: HitPhase,
-  setPower: (v: number | ((prev: number) => number)) => void,
-}
+  status: GameStatus;
+  hitPhase: HitPhase;
+  setPower: (v: number | ((prev: number) => number)) => void;
+};
 
 export const usePowerAnimation = ({ status, hitPhase, setPower }: Params) => {
   const directionRef = useRef(1);

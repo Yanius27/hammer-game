@@ -33,12 +33,11 @@
 }
 
 .left {
-
 }
 
 .center {
   width: 172px;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +45,6 @@
 }
 
 .right {
-
 }
 
 .bottom {

@@ -10,13 +10,13 @@
 }
 
 .default {
-  background: #FF42F0;
-  color: #FFF;
-  border: #FFF solid 1px;
+  background: #ff42f0;
+  color: #fff;
+  border: #fff solid 1px;
 }
 
 .hit {
-  background: #FFDF35;
-  color: #BB20A2;
-  border: #BB20A2 solid 1px;
+  background: #ffdf35;
+  color: #bb20a2;
+  border: #bb20a2 solid 1px;
 }

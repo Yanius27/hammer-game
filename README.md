@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# Mini Game Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Мини-игра, написанная на TypeScript с использованием Vite.
 
-Currently, two official plugins are available:
+## Демо
+Поиграть в игру можно по ссылке: [Ваша ссылка на GitHub Pages]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Технологии
+* **TypeScript** — строгая типизация.
+* **Vite** — инструмент сборки, локальный сервер.
+* **ESLint & Prettier** — линтинг и форматирование кода.
+* **GH Pages** — среда для размещения проекта.
 
-## React Compiler
+## Установка и запуск
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Клонируйте репозиторий:**
+   ```bash
+   git clone https://github.com/ваш-логин/название-проекта.git
+   cd название-проекта
+2. **Установите зависимости:**
+   ```bash
+   npm install
+3. **Запустите локальный сервер:**
+   ```bash
+   npm run dev
 
-## Expanding the ESLint configuration
+## Доступные скрипты
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* `npm run dev` — запуск локального сервера.
+* `npm run build` — компиляция TypeScript и сборка проекта в папку `dist`.
+* `npm run deploy` — сборка и автоматическая публикация на GitHub Pages.
+* `npm run preview` — предпросмотр собранного проекта.
+* `npm run lint` — автоматическое исправление ошибок стиля кода.
+* `npm run lint:check` — проверка кода линтером.
+* `npm run format` — форматирование всех файлов через Prettier.
+* `npm run format:check` — проверка форматирования.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Структура проекта
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* `public/` — статические ресурсы.
+* `src/` — исходный код проекта:
+    * `assets/` — шрифты и графика.
+    * `components/` — визуальные компоненты игры.
+    * `constants/` — константы.
+    * `hooks/` — пользовательские хуки.
+    * `store/` — управление состоянием Zustand.
+    * `styles/` — шлобальные стили.
+    * `types/` — типы данных TypeScript.
+    * `utils/` — вспомогательные функции.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Деплой на GitHub Pages
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Чтобы обновить версию игры в режиме онлайн, выполните:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+npm run deploy

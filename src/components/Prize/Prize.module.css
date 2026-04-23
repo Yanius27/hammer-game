@@ -1,4 +1,3 @@
-
 .wrapper {
   width: 100%;
 
@@ -21,11 +20,11 @@
 }
 
 .ordinary {
-  background: linear-gradient(to top, #080B3A, #B676CB);
+  background: linear-gradient(to top, #080b3a, #b676cb);
 }
 
 .perfect {
-  background: linear-gradient(to top, #FF0101, #FF9494);
+  background: linear-gradient(to top, #ff0101, #ff9494);
 }
 
 .cont::after {
@@ -37,8 +36,8 @@
 
   content: '';
   display: block;
-  
-  background-image: url("/src/assets/images/prize.svg");
+
+  background-image: url('/src/assets/images/prize.svg');
   background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
