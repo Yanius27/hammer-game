@@ -3,7 +3,7 @@
 Мини-игра, написанная на TypeScript с использованием Vite.
 
 ## Демо
-Поиграть в игру можно по ссылке: [Ваша ссылка на GitHub Pages]
+Поиграть в игру можно по ссылке: [https://yanius27.github.io/hammer-game/]
 
 ## Технологии
 * **TypeScript** — строгая типизация.
@@ -15,7 +15,7 @@
 
 1. **Клонируйте репозиторий:**
    ```bash
-   git clone https://github.com/ваш-логин/название-проекта.git
+   git clone https://github.com/Yanius27/hammer-game.git
    cd название-проекта
 2. **Установите зависимости:**
    ```bash
