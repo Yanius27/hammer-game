@@ -1,9 +1,9 @@
 # Mini Game Project
 
-Мини-игра, написанная на TypeScript.
+Мини-игра, написанная на TypeScript с использованием Vite.
 
 ## Демо
-Поиграть в игру можно по ссылке: [ссылка на демо][https://yanius27.github.io/hammer-game/]
+Поиграть в игру можно по ссылке: [ссылка на демо](https://yanius27.github.io/hammer-game/)
 
 ## Технологии
 * **TypeScript** — строгая типизация.
