@@ -4,3 +4,7 @@
 
   font-size: clamp(8px, 4vw, 14px);
 }
+
+.message-block span {
+  color: #ff4646;
+}
