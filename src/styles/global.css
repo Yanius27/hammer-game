@@ -38,8 +38,9 @@ body {
 }
 
 #root {
-  width: var(--game-width);
-  height: var(--game-height);
+  max-width: var(--game-width);
+  width: 100%;
+  aspect-ratio: 9/16;
 
   outline: #303030 solid 2px;
   overflow: hidden;

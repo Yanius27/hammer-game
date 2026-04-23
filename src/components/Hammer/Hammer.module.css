@@ -1,9 +1,10 @@
 .Hammer {
-  width: 140px;
+  width: 113%;
+  aspect-ratio: 1/1.1;
 
   position: absolute;
   left: 45%;
-  bottom: -65%;
+  bottom: -50%;
   z-index: 2;
 }
 
@@ -21,7 +22,7 @@
 }
 
 .RESOLVE {
-  transform: translate(-40px, -18px) rotate(-50deg);
+  transform: translate(-28%, -12%) rotate(-50deg);
 }
 
 @keyframes hammerReady {
@@ -30,28 +31,28 @@
   }
 
   100% {
-    transform: translate(10px, -40px) rotate(38deg);
+    transform: translate(5%, -20%) rotate(38deg);
   }
 }
 
 @keyframes hammerWindup {
   0% {
-    transform: translate(10px, -40px) rotate(38deg);
+    transform: translate(5%, -20%) rotate(38deg);
   }
 
   25% {
-    transform: translate(0, -50px) rotate(45deg);
+    transform: translate(0, -25%) rotate(50deg);
   }
 
   50% {
-    transform: translate(-20px, -45px) rotate(60deg);
+    transform: translate(-10%, -22.2%) rotate(65deg);
   }
 
   75% {
-    transform: translate(-40px, -17px) rotate(-60deg);
+    transform: translate(-28%, -12%) rotate(-60deg);
   }
 
   100% {
-    transform: translate(-40px, -18px) rotate(-50deg);
+    transform: translate(-28%, -12%) rotate(-50deg);
   }
 }

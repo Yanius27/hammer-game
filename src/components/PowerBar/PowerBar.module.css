@@ -1,6 +1,6 @@
 .power-bar {
-  width: 48px;
-  height: 147px;
+  height: 100%;
+  aspect-ratio: 1/3;
 
   padding: 2px 0;
 

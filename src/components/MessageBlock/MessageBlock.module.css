@@ -1,4 +1,6 @@
 .message-block {
   text-align: center;
   white-space: pre-line;
+
+  font-size: clamp(8px, 4vw, 14px);
 }
