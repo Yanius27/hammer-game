@@ -10,12 +10,14 @@ import { GameStatus, HitPhase } from '@/types/game';
 import { useGameView } from '@/hooks/useGameView';
 import { usePowerAnimation } from '@/hooks/usePowerAnimation';
 import { useGameStore } from '@/store/gameStore';
+import { useAudio } from '@/hooks/useAudio';
 
 import styles from './Game.module.css';
 
 export default function Game() {
   const { status, power, hitPhase, result, setPower, startGame, reset, hit } = useGameStore();
   const { buttonText, message } = useGameView(hitPhase, result);
+  useAudio(status);
 
   const isPlaying = status === GameStatus.PLAYING;
   const isWindUp = hitPhase === HitPhase.WINDUP;
@@ -54,14 +56,16 @@ export default function Game() {
         </div>
 
         <div className={styles.center}>
-          <MessageBlock text={message} />
-          {!isWindUp && (
-            <ActionButton
-              onClick={handleClick}
-              className={isPlaying ? 'hit' : 'default'}
-              label={buttonText}
-            />
-          )}
+          <div className={styles.wrapper}>
+            <MessageBlock text={message} />
+            {!isWindUp && (
+              <ActionButton
+                onClick={handleClick}
+                className={isPlaying ? 'hit' : 'default'}
+                label={buttonText}
+              />
+            )}
+          </div>
         </div>
 
         <div className={styles.right}>

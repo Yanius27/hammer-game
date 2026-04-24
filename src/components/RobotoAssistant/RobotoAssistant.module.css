@@ -1,9 +1,11 @@
 .roboto-assistant {
-  height: 100%;
-  margin-right: -1.2vw;
+  width: 100%;
+
+  display: flex;
+  align-items: end;
 }
 
 .roboto-assistant img {
-  height: 100%;
+  width: 100%;
   object-fit: cover;
 }

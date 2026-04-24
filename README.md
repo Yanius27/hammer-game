@@ -1,4 +1,4 @@
-# Mini Game Project
+# Hammer Game Project
 
 Мини-игра, написанная на TypeScript.
 
