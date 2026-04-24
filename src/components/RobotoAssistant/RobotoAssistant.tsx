@@ -1,12 +1,13 @@
 import { ROBOTO_BY_RESULT } from './RobotoAssistant.config';
-import styles from './RobotoAssistant.module.css';
 import type { HitResult } from '@/types/game';
 
-type TRobotoAssiatant = {
+import styles from './RobotoAssistant.module.css';
+
+type TRobotoAssistant = {
   result: HitResult | null;
 };
 
-export default function RobotoAssistant({ result }: TRobotoAssiatant) {
+export function RobotoAssistant({ result }: TRobotoAssistant) {
   const imageSrc = result ? ROBOTO_BY_RESULT[result] : ROBOTO_BY_RESULT.LOW;
 
   return (

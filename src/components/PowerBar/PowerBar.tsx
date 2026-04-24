@@ -1,7 +1,8 @@
 import { MAX_POWER } from '@/constants/game';
+
 import styles from './PowerBar.module.css';
 
-export default function PowerBar({ power }: { power: number }) {
+export function PowerBar({ power }: { power: number }) {
   return (
     <div className={styles['power-bar']}>
       <div style={{ top: `${MAX_POWER - power - 2}%` }} className={styles.level}></div>

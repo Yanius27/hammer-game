@@ -1,17 +1,17 @@
-import { useGameStore } from '@/store/gameStore';
-import ActionButton from '../ActionButton/ActionButton';
-import HitButton from '../HitButton/HitButton';
-import ResultScale from '../ResultScale/ResultScale';
+import ActionButton from '@/components/ActionButton';
+import HitButton from '@/components/HitButton';
+import ResultScale from '@/components/ResultScale';
 import GameLayout from './GameLayout';
+import MessageBlock from '@/components/MessageBlock';
+import Hammer from '@/components/Hammer';
+import PowerBar from '@/components/PowerBar';
+import RobotoAssistant from '@/components/RobotoAssistant';
 import { GameStatus, HitPhase } from '@/types/game';
 import { useGameView } from '@/hooks/useGameView';
 import { usePowerAnimation } from '@/hooks/usePowerAnimation';
-import MessageBlock from '../MessageBlock/MessageBlock';
-import Hammer from '../Hammer/Hammer';
+import { useGameStore } from '@/store/gameStore';
 
 import styles from './Game.module.css';
-import PowerBar from '../PowerBar/PowerBar';
-import RobotoAssistant from '../RobotoAssistant/RobotoAssistant';
 
 export default function Game() {
   const { status, power, hitPhase, result, setPower, startGame, reset, hit } = useGameStore();

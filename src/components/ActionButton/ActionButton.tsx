@@ -1,12 +1,14 @@
 import styles from './ActionButton.module.css';
 
+type TActionButtonClass = 'hit' | 'default';
+
 type TActionButtonProps = {
   onClick: () => void;
-  className: string;
+  className: TActionButtonClass;
   label: string;
 };
 
-export default function ActionButton({ onClick, className, label }: TActionButtonProps) {
+export function ActionButton({ onClick, className, label }: TActionButtonProps) {
   return (
     <button onClick={onClick} className={`${styles['action-button']} ${styles[className]}`}>
       {label}

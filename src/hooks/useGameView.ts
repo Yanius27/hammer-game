@@ -5,7 +5,7 @@ import { HitPhase, HitResult } from '@/types/game';
  * Хук для преобразования внутреннего состояния игры в текстовые данные для UI
  *
  * @param phase - текущая фаза удара (IDLE, PLAYING, WINDUP, RESOLVE)
- * @param result - иоговый результат удара ( MISS, LOW, MEDIUM, HIGH, PERFECT)
+ * @param result - итоговый результат удара ( MISS, LOW, MEDIUM, HIGH, PERFECT)
  *
  * @returns Объект с текстом для кнопки и игровым сообщением.
  *

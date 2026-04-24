@@ -1,6 +1,6 @@
 import styles from './Prize.module.css';
 
-export default function Prize({ isPerfect }: { isPerfect: boolean }) {
+export function Prize({ isPerfect }: { isPerfect: boolean }) {
   return (
     <div className={styles.wrapper}>
       <div className={`${styles.cont} ${isPerfect ? styles.perfect : styles.ordinary}`} />

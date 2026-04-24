@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { INTERVAL, MAX_POWER, MIN_POWER } from '@/constants/game';
+import { INTERVAL, MAX_POWER, MIN_POWER, POWER_STEP } from '@/constants/game';
 import { GameStatus, HitPhase } from '@/types/game';
 
 type Params = {
@@ -31,17 +31,19 @@ export const usePowerAnimation = ({ status, hitPhase, setPower }: Params) => {
 
     const interval = setInterval(() => {
       setPower((prev) => {
-        const next = prev + directionRef.current * 2;
+        let next = prev + directionRef.current * POWER_STEP;
 
         if (next >= MAX_POWER) {
           directionRef.current = -1;
+          next = MAX_POWER;
         }
 
         if (next <= MIN_POWER) {
           directionRef.current = 1;
+          next = MIN_POWER;
         }
 
-        return next;
+        return Math.min(MAX_POWER, Math.max(MIN_POWER, next));
       });
     }, INTERVAL);
 

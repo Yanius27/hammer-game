@@ -7,13 +7,13 @@
 }
 
 .WINDUP {
-  animation: buttonPress 1s ease-in-out forwards 0.8s;
+  animation: buttonPress var(--animation-duration, 1000ms) ease-in-out forwards 0.8s;
 }
 
 .RESOLVE {
   background: url('/src/assets/images/button_active.png');
   background-size: cover;
-  animation: buttonShaking 700ms ease-in-out forwards;
+  animation: buttonShaking var(--animation-duration, 700ms) ease-in-out forwards;
 }
 
 @keyframes buttonPress {

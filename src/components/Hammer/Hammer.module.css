@@ -14,11 +14,11 @@
 }
 
 .PLAYING {
-  animation: hammerReady 800ms ease-in-out forwards;
+  animation: hammerReady var(--animation-duration, 800ms) ease-in-out forwards;
 }
 
 .WINDUP {
-  animation: hammerWindup 1.5s ease-in forwards;
+  animation: hammerWindup var(--animation-duration, 1.5s) ease-in forwards;
 }
 
 .RESOLVE {

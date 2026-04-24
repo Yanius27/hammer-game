@@ -4,7 +4,15 @@ import App from './App';
 
 import './styles/global.css';
 
-createRoot(document.getElementById('root')!).render(
+const container = document.getElementById('root');
+
+if (!container) {
+  throw new Error('Контейнер root не найден! Убедитесь что в HTML есть элемент с id="root"');
+}
+
+const root = createRoot(container);
+
+root.render(
   <StrictMode>
     <App />
   </StrictMode>
