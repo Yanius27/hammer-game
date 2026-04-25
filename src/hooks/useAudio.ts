@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { GameStatus } from '@/types/game';
 
-import backgroundMusic from '/sounds/funky_town.mp3';
+import backgroundMusic from '/sounds/ui-i-a-i-i_cat.mp3';
 
 /**
  * Хук для настройки воспроизведения аудио
@@ -23,10 +23,8 @@ export const useAudio = (status: GameStatus) => {
       bgMusicRef.current.volume = 0.1;
     }
 
-    if (status === GameStatus.PLAYING) {
+    if (status !== GameStatus.IDLE) {
       bgMusicRef.current.play();
-    } else {
-      bgMusicRef.current.pause();
     }
 
     return () => {
