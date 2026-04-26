@@ -1,0 +1,32 @@
+.audio-toggle {
+  width: 12%;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+
+  border: 0;
+
+  position: absolute;
+  top: 4px;
+  right: 4px;
+
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.audio-toggle:hover {
+  transform: scale(1.05);
+}
+
+.muted {
+  background-color: gray;
+  background-image: url('/src//assets/icons/mute.svg');
+  opacity: 0.6;
+}
+
+.unmuted {
+  background-color: rgb(21, 151, 21);
+  background-image: url('/src//assets/icons/unmute.svg');
+}

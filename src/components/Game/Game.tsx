@@ -10,16 +10,16 @@ import { GameStatus, HitPhase } from '@/types/game';
 import { useGameView } from '@/hooks/useGameView';
 import { usePowerAnimation } from '@/hooks/usePowerAnimation';
 import { useGameStore } from '@/store/gameStore';
-import { useAudio } from '@/hooks/useAudio';
 
 import styles from './Game.module.css';
+import AudioToggleButton from '../AudioToggleButton';
 
 export default function Game() {
   const { status, power, hitPhase, result, setPower, startGame, reset, hit } = useGameStore();
   const { buttonText, message } = useGameView(hitPhase, result);
-  useAudio(status);
 
   const isPlaying = status === GameStatus.PLAYING;
+  const isIdle = status === GameStatus.IDLE;
   const isWindUp = hitPhase === HitPhase.WINDUP;
 
   usePowerAnimation({ status, hitPhase, setPower });
@@ -72,6 +72,8 @@ export default function Game() {
           <RobotoAssistant result={result} />
         </div>
       </div>
+
+      {!isIdle && <AudioToggleButton status={status} />}
     </GameLayout>
   );
 }
